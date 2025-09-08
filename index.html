@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Workshop Booking – Interactive Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  </head>
+  <body>
+    <a href="#top" class="sr-only" id="skip-to-content">Skip to content</a>
+    <header class="site-header">
+      <nav class="nav">
+        <div class="brand" aria-label="Workshop Booking">🔧 FOSSEE Workshops</div>
+        <div class="actions nav-links">
+          <a href="#top" class="nav-link">Home</a>
+          <a href="#workshops" class="nav-link">Workshops</a>
+          <a href="#booking" class="nav-link">Schedule</a>
+          <a href="#testimonials-title" class="nav-link">Resources</a>
+          <a href="#footer" class="nav-link">Contact</a>
+          <a href="#login" class="nav-link">Login</a>
+          <button class="theme-toggle" aria-pressed="false" aria-label="Toggle theme">🌗</button>
+          <a href="#booking" class="btn btn--glow btn--ripple">Book Now</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero" id="top" data-aos="fade-up">
+        <video class="hero-video" autoplay muted loop playsinline aria-hidden="true">
+          <source src="https://cdn.coverr.co/videos/coverr-teamwork-4922/1080p.mp4" type="video/mp4">
+        </video>
+        <div class="hero__content reveal">
+          <h1 class="title-xl">Master New Skills with Animated, Interactive Workshops</h1>
+          <p class="hero__subtitle">Hands-on sessions led by expert trainers. Choose your topic, pick a schedule, and book in minutes.</p>
+          <div class="center" style="gap:.75rem;">
+            <a href="#booking" class="btn btn--glow btn--ripple">Book Now</a>
+            <a href="#workshops" class="btn browse-workshops" style="--btn-bg:var(--accent);">Explore Workshops</a>
+          </div>
+          <div class="hero-strip" aria-hidden="true">
+            <div class="hero-strip__track">
+              <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1400&auto=format&fit=crop" alt="coding team" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=1400&auto=format&fit=crop" alt="presentation" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1400&auto=format&fit=crop" alt="laptop" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=1400&auto=format&fit=crop" alt="discussion" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1400&auto=format&fit=crop" alt="lab" loading="lazy">
+              <!-- duplicate for seamless loop -->
+              <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1400&auto=format&fit=crop" alt="coding team" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=1400&auto=format&fit=crop" alt="presentation" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1400&auto=format&fit=crop" alt="laptop" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=1400&auto=format&fit=crop" alt="discussion" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1400&auto=format&fit=crop" alt="lab" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Workshops Section (Catalog style like screenshot) -->
+      <section class="section" id="workshops" aria-labelledby="workshops-title">
+        <div class="container stack-lg">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="section__title" id="workshops-title">Popular Workshops</h2>
+              <div class="stack" style="margin:.25rem 0 1rem;">
+                <input id="search" class="input" placeholder="Search by title, trainer, or category" aria-label="Live search workshops" />
+              </div>
+            </div>
+          </div>
+          <div class="row workshop-grid">
+            <!-- Card 1 -->
+            <div class="col-4 reveal" data-aos="fade-up" data-aos-delay="50">
+              <article class="card card--hover flip workshop-card" data-title="Python for Data Science" data-trainer="Amit Sharma" data-category="Data">
+                <div class="flip__inner">
+                  <div class="flip__face flip__face--front">
+                    <img class="wk-img" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="Python workshop" loading="lazy">
+                    <span class="badge badge--success">Open for Booking</span>
+                    <h3>Python for Data Science</h3>
+                    <p class="muted">Data manipulation, visualization, and analysis using Python.</p>
+                  </div>
+                  <div class="flip__face flip__face--back">
+                    <p>Hands-on Pandas, NumPy, Matplotlib and real projects.</p>
+                    <p class="muted">Jun 15–16, 2023</p>
+                    <div class="wk-card-actions"><button class="btn btn--ripple" data-details='{"title":"Python for Data Science","date":"Jun 15–16, 2023","desc":"Deep dive into Python for data workflows with labs."}'>Details</button></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-4 reveal" data-aos="fade-up" data-aos-delay="100">
+              <article class="card card--hover flip workshop-card" data-title="Advanced MATLAB Programming" data-trainer="Priya Patel" data-category="Programming">
+                <div class="flip__inner">
+                  <div class="flip__face flip__face--front">
+                    <img class="wk-img" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="MATLAB programming" loading="lazy">
+                    <span class="badge badge--warning">Limited Seats</span>
+                    <h3>Advanced MATLAB Programming</h3>
+                    <p class="muted">Advanced techniques and best practices in MATLAB.</p>
+                  </div>
+                  <div class="flip__face flip__face--back">
+                    <p>Vectorization, toolboxes, optimization, and practical tips.</p>
+                    <p class="muted">Jun 20–21, 2023</p>
+                    <div class="wk-card-actions"><button class="btn btn--ripple" data-details='{"title":"Advanced MATLAB Programming","date":"Jun 20–21, 2023","desc":"Master high‑performance MATLAB with live scripts."}'>Details</button></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-4 reveal" data-aos="fade-up" data-aos-delay="150">
+              <article class="card card--hover flip workshop-card" data-title="Introduction to Scilab" data-trainer="Rajesh Kumar" data-category="Computation">
+                <div class="flip__inner">
+                  <div class="flip__face flip__face--front">
+                    <img class="wk-img" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop" alt="Scilab introduction" loading="lazy">
+                    <span class="badge badge--success">Open for Booking</span>
+                    <h3>Introduction to Scilab</h3>
+                    <p class="muted">Get started with numerical computation and visualization.</p>
+                  </div>
+                  <div class="flip__face flip__face--back">
+                    <p>Core language, plotting, and scientific workflows.</p>
+                    <p class="muted">Jun 25–26, 2023</p>
+                    <div class="wk-card-actions"><button class="btn btn--ripple" data-details='{"title":"Introduction to Scilab","date":"Jun 25–26, 2023","desc":"Foundations of Scilab for engineers and scientists."}'>Details</button></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="center" style="margin-top:1rem;">
+            <button class="btn btn--ripple" id="show-all">Show All Workshops</button>
+          </div>
+          <div id="all-workshops" class="row hidden" aria-live="polite" style="margin-top:1rem;"></div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="section" aria-labelledby="testimonials-title">
+        <div class="container stack-lg">
+          <h2 class="section__title" id="testimonials-title">What Participants Say</h2>
+          <p class="muted">Feedback from our workshop attendees</p>
+          <div class="row">
+            <div class="col-4">
+              <article class="card testimonial" data-aos="fade-up">
+                <div class="stars" aria-hidden="true">★★★★★</div>
+                <blockquote>"The Python for Data Science workshop was incredibly well‑structured. The hands‑on exercises helped me grasp complex concepts easily."</blockquote>
+                <div class="author">
+                  <div class="avatar">A</div>
+                  <div class="meta"><div class="name">Amit Sharma</div><div class="muted">Research Scholar</div></div>
+                </div>
+              </article>
+            </div>
+            <div class="col-4">
+              <article class="card testimonial" data-aos="fade-up" data-aos-delay="80">
+                <div class="stars" aria-hidden="true">★★★★★</div>
+                <blockquote>"The instructors were knowledgeable and patient. I appreciated the practical approach with real‑world examples."</blockquote>
+                <div class="author">
+                  <div class="avatar">P</div>
+                  <div class="meta"><div class="name">Priya Patel</div><div class="muted">Engineering Student</div></div>
+                </div>
+              </article>
+            </div>
+            <div class="col-4">
+              <article class="card testimonial" data-aos="fade-up" data-aos-delay="160">
+                <div class="stars" aria-hidden="true">★★★★★</div>
+                <blockquote>"The workshop materials were comprehensive and the follow‑up resources have been invaluable for my continued learning."</blockquote>
+                <div class="author">
+                  <div class="avatar">K</div>
+                  <div class="meta"><div class="name">Rajesh Kumar</div><div class="muted">Faculty Member</div></div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Banner -->
+      <section class="section" aria-labelledby="cta2-title">
+        <div class="container">
+          <div class="cta-banner" data-aos="zoom-in">
+            <h2 class="cta-title" id="cta2-title">Ready to Enhance Your Skills?</h2>
+            <p class="muted">Join our next workshop and take your knowledge to the next level</p>
+            <div class="cta-actions">
+              <a href="#workshops" class="btn btn--ripple">Browse Workshops</a>
+              <a href="#booking" class="btn btn--glow btn--ripple" style="--btn-bg:var(--accent);">Create Account</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works -->
+      <section class="section" aria-labelledby="how-title">
+        <div class="container stack-lg">
+          <h2 class="section__title" id="how-title">How It Works</h2>
+          <p class="muted">Simple steps to book and join our workshops</p>
+          <div class="row how-grid">
+            <div class="col-3" data-aos="zoom-in">
+              <div class="how-card how-bg1">
+                <div class="how-icon">🔎</div>
+                <h3 class="how-step">1. Browse</h3>
+                <p class="how-desc">Explore available workshops and find the right one for you</p>
+              </div>
+            </div>
+            <div class="col-3" data-aos="zoom-in" data-aos-delay="80">
+              <div class="how-card how-bg2">
+                <div class="how-icon">📝</div>
+                <h3 class="how-step">2. Register</h3>
+                <p class="how-desc">Book your spot with a simple registration process</p>
+              </div>
+            </div>
+            <div class="col-3" data-aos="zoom-in" data-aos-delay="160">
+              <div class="how-card how-bg3">
+                <div class="how-icon">📩</div>
+                <h3 class="how-step">3. Confirm</h3>
+                <p class="how-desc">Receive confirmation and details via email</p>
+              </div>
+            </div>
+            <div class="col-3" data-aos="zoom-in" data-aos-delay="240">
+              <div class="how-card how-bg4">
+                <div class="how-icon">👩‍🏫</div>
+                <h3 class="how-step">4. Attend</h3>
+                <p class="how-desc">Join the workshop and enhance your skills</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visual Gallery Fill -->
+      <section class="section gallery" aria-hidden="true">
+        <div class="gallery-row">
+          <img src="https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?q=80&w=1400&auto=format&fit=crop" alt="workbench" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1400&auto=format&fit=crop" alt="team" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?q=80&w=1400&auto=format&fit=crop" alt="laptop" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1400&auto=format&fit=crop" alt="lab" loading="lazy">
+        </div>
+        <div class="gallery-row">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1400&auto=format&fit=crop" alt="devices" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1400&auto=format&fit=crop" alt="coding" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1400&auto=format&fit=crop" alt="audience" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=1400&auto=format&fit=crop" alt="charts" loading="lazy">
+        </div>
+      </section>
+
+      <!-- Schedule + Booking -->
+      <section class="section" id="booking" style="position:relative;" aria-labelledby="booking-title">
+        <div class="particles" aria-hidden="true"></div>
+        <div class="container grid" style="grid-template-columns: repeat(12, 1fr);">
+          <div class="card col-6 reveal" data-aos="fade-right" style="grid-column: span 6; padding:1rem;">
+            <div class="calendar">
+              <div class="calendar__header">
+                <div class="calendar__month">Month YYYY</div>
+                <div class="calendar__nav">
+                  <button class="icon-btn icon-prev" aria-label="Previous month">◀</button>
+                  <button class="icon-btn icon-next" aria-label="Next month">▶</button>
+                </div>
+              </div>
+              <div class="calendar__grid" aria-live="polite"></div>
+            </div>
+            <hr class="divider" />
+            <div class="stack">
+              <h3 class="muted">Available Slots</h3>
+              <div class="slots"></div>
+            </div>
+          </div>
+
+          <div class="card col-6 reveal" data-aos="fade-left" style="grid-column: span 6; padding:1rem; z-index:1;">
+            <form id="booking-form" class="form">
+              <div class="stack">
+                <h2 class="section__title" id="booking-title">Book Your Workshop</h2>
+                <div class="stepper">
+                  <div class="stepper__item"></div>
+                  <div class="stepper__item"></div>
+                  <div class="stepper__item"></div>
+                  <div class="stepper__item"></div>
+                </div>
+              </div>
+
+              <!-- Step 1: Select Workshop -->
+              <div class="form-step stack" aria-label="Select Workshop" role="region">
+                <div class="form__group float">
+                  <select id="workshop" name="workshop" class="select" required>
+                    <option value="" disabled selected>Choose a workshop</option>
+                    <option>JavaScript Essentials</option>
+                    <option>Advanced CSS Animations</option>
+                    <option>Data Visualization</option>
+                  </select>
+                  <label class="float__label" for="workshop">Workshop</label>
+                </div>
+                <div class="form__row" style="grid-template-columns: 1fr 1fr;">
+                  <div class="form__group float">
+                    <input id="date" name="date" class="input" placeholder=" " readonly>
+                    <label class="float__label" for="date">Date</label>
+                  </div>
+                  <div class="form__group float">
+                    <input id="time" name="time" class="input" placeholder=" " readonly>
+                    <label class="float__label" for="time">Time</label>
+                  </div>
+                </div>
+                <div class="form__row" style="grid-template-columns: auto auto;">
+                  <button type="button" class="btn btn--glow btn--ripple" data-next="2">Next</button>
+                </div>
+              </div>
+
+              <!-- Step 2: Enter Details -->
+              <div class="form-step stack hidden" aria-label="Enter Details" role="region">
+                <div class="form__row" style="grid-template-columns: 1fr 1fr;">
+                  <div class="form__group float">
+                    <input id="name" name="name" class="input" placeholder=" " required>
+                    <label class="float__label" for="name">Full Name</label>
+                  </div>
+                  <div class="form__group float">
+                    <input id="email" name="email" type="email" class="input" placeholder=" " required>
+                    <label class="float__label" for="email">Email</label>
+                  </div>
+                </div>
+                <div class="form__group float">
+                  <input id="phone" name="phone" class="input" placeholder=" ">
+                  <label class="float__label" for="phone">Phone</label>
+                </div>
+                <div class="form__row" style="grid-template-columns: auto auto;">
+                  <button type="button" class="btn" data-back="1">Back</button>
+                  <button type="button" class="btn btn--glow btn--ripple" data-next="3">Next</button>
+                </div>
+              </div>
+
+              <!-- Step 3: Payment -->
+              <div class="form-step stack hidden" aria-label="Payment" role="region">
+                <div class="pricing">
+                  <div class="toggle" role="tablist" aria-label="Pricing toggle" data-state="one">
+                    <div class="toggle__bar" aria-hidden="true"></div>
+                    <button type="button" class="toggle__btn is-active" data-mode="one" role="tab" aria-selected="true">One-time</button>
+                    <button type="button" class="toggle__btn" data-mode="package" role="tab" aria-selected="false">Package</button>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <article class="card card--hover price-card stack" data-price-set data-one-price="$129" data-package-price="$299" style="padding:1rem;">
+                        <h4>Standard</h4>
+                        <div class="stack">
+                          <div class="price price--animated">$129</div>
+                          <div class="muted">1 workshop, all materials included.</div>
+                        </div>
+                      </article>
+                    </div>
+                    <div class="col-6">
+                      <article class="card card--hover price-card stack" data-price-set data-one-price="$189" data-package-price="$399" style="padding:1rem;">
+                        <h4>Pro</h4>
+                        <div class="stack">
+                          <div class="price price--animated">$189</div>
+                          <div class="muted">Includes priority Q&A session.</div>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
+                  <div class="form__row" style="grid-template-columns: 1fr auto auto; align-items: end;">
+                    <div class="form__group float">
+                      <input id="promo" class="input" placeholder=" ">
+                      <label class="float__label" for="promo">Promo Code</label>
+                    </div>
+                    <button type="button" id="apply-promo" class="btn">Apply</button>
+                    <div class="stack" style="align-items:end;">
+                      <div class="muted">Total</div>
+                      <div id="total-price" class="price" data-base="129">$129</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form__row" style="grid-template-columns: auto auto;">
+                  <button type="button" class="btn" data-back="2">Back</button>
+                  <button type="submit" class="btn btn--glow btn--ripple">Pay & Book</button>
+                </div>
+              </div>
+
+              <!-- Step 4: Confirmation -->
+              <div class="form-step stack hidden center" aria-label="Confirmation" role="region">
+                <div class="stack" style="text-align:center;">
+                  <div style="font-size:3rem;">✅</div>
+                  <h3>Booking Confirmed!</h3>
+                  <p class="muted">Check your email for details. See you at the workshop 🎉</p>
+                </div>
+                <div class="center">
+                  <a href="#top" class="btn">Back to top</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing highlight -->
+      <section class="section" aria-labelledby="cta-title">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 center">
+              <h2 class="sr-only" id="cta-title">Reserve</h2>
+              <a href="#booking" class="btn btn--glow btn--ripple">Reserve Your Seat</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <section class="footer-brand">
+          <h3>FOSSEE Workshops</h3>
+          <p class="muted">Promoting the use of open source software in educational institutions.</p>
+          <div class="socials" aria-label="Social links">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Twitter">t</a>
+            <a href="#" aria-label="LinkedIn">in</a>
+            <a href="#" aria-label="YouTube">▶</a>
+          </div>
+        </section>
+        <nav class="footer-links" aria-label="Quick Links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#top">Home</a></li>
+            <li><a href="#workshops">Workshops</a></li>
+            <li><a href="#booking">Schedule</a></li>
+            <li><a href="#resources">Resources</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-links" aria-label="Support">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#help">Help Center</a></li>
+            <li><a href="#faqs">FAQs</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#tos">Terms of Service</a></li>
+          </ul>
+        </nav>
+        <section class="footer-news">
+          <h4>Subscribe to Newsletter</h4>
+          <form id="newsletter" class="newsletter" aria-label="Subscribe">
+            <input type="email" placeholder="Your email address" aria-label="Email" required>
+            <button class="btn" type="submit">Subscribe</button>
+          </form>
+        </section>
+      </div>
+      <div class="container" style="margin-top:1rem; text-align:center;">
+        © <span id="year"></span> Workshop Booking Demo
+      </div>
+    </footer>
+
+    <!-- Sticky CTA for mobile -->
+    <div class="cta-sticky center">
+      <a href="#booking" class="btn btn--glow btn--ripple w-full">Book Now</a>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal" id="confirm-modal" role="dialog" aria-modal="true" aria-labelledby="confirm-title" aria-describedby="confirm-desc">
+      <div class="modal__dialog">
+        <div class="modal__header">
+          <h4 id="confirm-title">Success</h4>
+          <button class="icon-btn" data-close-modal aria-label="Close">✕</button>
+        </div>
+        <div class="modal__body">
+          <p id="confirm-desc">Your booking was successful! A confirmation email has been sent.</p>
+        </div>
+        <div class="modal__footer">
+          <button class="btn" data-close-modal>Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Set footer year and mirror selected date/time fields
+      document.addEventListener('DOMContentLoaded', () => {
+        const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+        document.addEventListener('click', (e) => {
+          const selDay = e.target.closest('.calendar__cell--selected');
+          if (selDay) {
+            const root = document.querySelector('.calendar__month')?.textContent || '';
+            const day = selDay?.dataset?.day || '';
+            const dateField = document.getElementById('date'); if (dateField) dateField.value = day ? day + ' ' + root : '';
+          }
+          const selSlot = e.target.closest('.slot--selected');
+          if (selSlot) {
+            const timeField = document.getElementById('time'); if (timeField) timeField.value = selSlot.dataset.time || '';
+          }
+        });
+      });
+    </script>
+    <!-- AOS + GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Init AOS
+        if (window.AOS) AOS.init({ duration: 700, once: true, offset: 40, easing: 'ease-out-quart' });
+        // Init GSAP enhancements
+        if (window.gsap) {
+          gsap.registerPlugin(window.ScrollTrigger || {});
+          gsap.from('.title-xl', { y: 12, autoAlpha: 0, duration: .8, ease: 'power2.out' });
+          gsap.utils.toArray('.card.card--hover').forEach((el) => {
+            gsap.from(el, { y: 20, autoAlpha: 0, duration: .6, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 80%' } });
+          });
+          gsap.utils.toArray('.gallery-row img').forEach((img) => {
+            gsap.from(img, { y: 24, autoAlpha: 0, duration: .6, ease: 'power2.out', scrollTrigger: { trigger: img, start: 'top 90%' } });
+          });
+        }
+      });
+    </script>
+  </body>
+  </html>
+
+
