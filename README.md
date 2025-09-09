@@ -58,21 +58,21 @@ Deployed Version 👉 [Live Demo on Vercel](https://workshopbookingpage.vercel.a
 ---
 
 ## 🖼️ Visual Showcase
+<img width="1890" height="872" alt="image" src="https://github.com/user-attachments/assets/e1fb0646-3747-462f-978e-77ec72b5b9ed" />
+<img width="1860" height="874" alt="image" src="https://github.com/user-attachments/assets/04a5647e-0a4b-4b01-a29c-bd7cf89c5b7c" />
+<img width="1915" height="576" alt="image" src="https://github.com/user-attachments/assets/302b4a6b-43de-4892-a8d3-7ceeef7e478a" />
+<img width="1872" height="492" alt="image" src="https://github.com/user-attachments/assets/d59573c7-3721-407c-b38b-51f46b29aa86" />
+<img width="1861" height="872" alt="image" src="https://github.com/user-attachments/assets/95fae425-adc1-45d7-8815-4823b55852d5" />
+<img width="1851" height="875" alt="image" src="https://github.com/user-attachments/assets/af02b564-8e61-433d-bb31-5d52938a8a95" />
+<img width="1873" height="548" alt="image" src="https://github.com/user-attachments/assets/237f24d0-722e-4d47-9a65-69b942ed5124" />
 
-### Before
-*(Insert actual screenshot – low responsiveness, less modern UI)*  
-![Before Demo](./screenshots/before.png)
 
-### After
-*(Insert actual screenshot – improved responsive UI)*  
-![After Demo](./screenshots/after.png)
 
-Key differences:
-- Mobile-friendly navigation bar.  
-- Cleaner booking form with better spacing and styling.  
-- Improved typography and visual hierarchy.  
 
----
+
+
+
+
 
 ## ✅ Testing & Validation
 - **Cross-browser testing**: Verified on Chrome, Edge, and Firefox.  
